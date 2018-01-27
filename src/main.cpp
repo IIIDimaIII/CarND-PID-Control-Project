@@ -66,7 +66,7 @@ int main()
           pid.UpdateError(cte);          
           steer_value = pid.TotalError();          
           //throttle    = 0.15 - Kp2 * (pow(std::abs(pid.p_error),1.75));
-          throttle = 0.1;         
+          throttle = 0.2;         
 
           // DEBUG
           std::cout << "CTE: " << cte << " SV: " << steer_value << std::endl;
