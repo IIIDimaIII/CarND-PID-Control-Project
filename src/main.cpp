@@ -71,12 +71,11 @@ int main()
           // DEBUG
           std::cout << "CTE: " << cte << " SV: " << steer_value << std::endl;
 
-          /*std::cout << " Step: " << step << " TOTAL ERROR: " << pid.total_error << " cte: " << cte << std::endl;
-          std::cout << " P: " << -pid.Kp * pid.p_error << std::endl;
+          //std::cout << " Step: " << step << " TOTAL ERROR: " << pid.total_error << " cte: " << cte << std::endl;
+          //std::cout << " P: " << -pid.Kp * pid.p_error << std::endl;
           std::cout << " I: " << -pid.Ki * pid.i_error << std::endl;
-          std::cout << " D: " << -pid.Kd * pid.d_error << std::endl;
-          std::cout << " D error: " << pid.d_error << std::endl;
-          step +=1;*/
+          //std::cout << " D: " << -pid.Kd * pid.d_error << std::endl;
+          //step +=1;
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
