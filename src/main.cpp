@@ -62,7 +62,7 @@ int main()
           * NOTE: Feel free to play around with the throttle and speed. Maybe use
           * another PID controller to control the speed!
           */
-          double Kp2 = 0.05;          
+          double Kp2 = 0.5;          
           pid.UpdateError(cte);          
           steer_value = pid.TotalError();          
           throttle    = 0.4 - Kp2 * (pow(std::abs(pid.p_error),1.75));
