@@ -64,9 +64,13 @@ int main()
           */
           double Kp2 = 0.4;          
           pid.UpdateError(cte);          
-          steer_value = pid.TotalError();          
-          throttle    = 0.4 - Kp2 * (pow(std::abs(pid.p_error),2));
-                   
+          steer_value = pid.TotalError();
+          if (speed > 1.){          
+            throttle    = 0.4 - Kp2 * (pow(std::abs(pid.p_error),2));
+          }
+          else {
+            throttle = 0.05;
+          }         
 
           // DEBUG
           std::cout << "CTE: " << cte << " SV: " << steer_value << std::endl;
