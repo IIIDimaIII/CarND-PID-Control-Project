@@ -35,7 +35,7 @@ int main()
   PID pid;
   PID pid_throttle;
   // TODO: Initialize the pid variable.
-  pid.Init(0.5,0.0,0.0);
+  pid.Init(1,0.0,0.0);
   int step = 0;
   h.onMessage([&pid,&step](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -66,7 +66,7 @@ int main()
           pid.UpdateError(cte);          
           steer_value = pid.TotalError();          
           //throttle    = 0.15 - Kp2 * (pow(std::abs(pid.p_error),1.75));
-          throttle = 0.05;         
+          throttle = 0.1;         
 
           // DEBUG
           std::cout << "CTE: " << cte << " SV: " << steer_value << std::endl;
