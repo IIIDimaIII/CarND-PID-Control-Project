@@ -35,7 +35,7 @@ int main()
   PID pid;
   PID pid_throttle;
   // TODO: Initialize the pid variable.
-  pid.Init(1.0,0.0005,20.0);
+  pid.Init(0.8,0.0005,20.0);
   int step = 0;
   double cum_cte = 0;
   h.onMessage([&pid,&step, &cum_cte](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
