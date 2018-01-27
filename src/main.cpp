@@ -34,7 +34,7 @@ int main()
 
   PID pid;
   PID pid_throttle;
-  // TODO: Initialize the pid variable.
+
   pid.Init(0.75,0.0005,40.0);
   int step = 0;
   double cum_cte = 0;
@@ -58,12 +58,7 @@ int main()
           double steer_value;
           double throttle;
           cum_cte += cte; 
-          /*
-          * TODO: Calcuate steering value here, remember the steering value is
-          * [-1, 1].
-          * NOTE: Feel free to play around with the throttle and speed. Maybe use
-          * another PID controller to control the speed!
-          */
+
           double Kp2 = 0.7;          
           pid.UpdateError(cte);          
           steer_value = pid.TotalError();
@@ -75,13 +70,12 @@ int main()
           }         
 
           // DEBUG
-          std::cout << "CTE: " << cte << " SV: " << steer_value << std::endl;
-
+          //std::cout << "CTE: " << cte << " SV: " << steer_value << std::endl;
           //std::cout << " Step: " << step << " TOTAL ERROR: " << pid.total_error << " cte: " << cte << std::endl;
-          std::cout << " P: " << -pid.Kp * pid.p_error << std::endl;
-          std::cout << " I: " << -pid.Ki * pid.i_error << std::endl;
-          std::cout << " D: " << -pid.Kd * pid.d_error << std::endl;
-          std::cout << " cum cte: " << cum_cte << std::endl;
+          //std::cout << " P: " << -pid.Kp * pid.p_error << std::endl;
+          //std::cout << " I: " << -pid.Ki * pid.i_error << std::endl;
+          //std::cout << " D: " << -pid.Kd * pid.d_error << std::endl;
+          //std::cout << " cum cte: " << cum_cte << std::endl;
           //step +=1;
 
           json msgJson;
